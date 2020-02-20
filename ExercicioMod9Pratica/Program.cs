@@ -12,7 +12,6 @@ namespace ExercicioMod9Pratica
     {
         static void Main(string[] args)
         {
-           
             Console.WriteLine("Enter Cliente Data: ");
             Console.Write("Name: ");
             string name = Console.ReadLine();
@@ -43,14 +42,11 @@ namespace ExercicioMod9Pratica
 
                 Product pro = new Product(namepro, pricePro);
                 OrderItem List = new OrderItem(quantityPro, pricePro, pro);
-                         
                 item.AddItem(List);
-               
             }
             Console.WriteLine();
             Console.WriteLine("Order Sumary:");
             Console.WriteLine(item);
-                        
         }
     }
 }
