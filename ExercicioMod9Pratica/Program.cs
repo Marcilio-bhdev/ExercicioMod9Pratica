@@ -24,15 +24,14 @@ namespace ExercicioMod9Pratica
             Console.Write("Status: 0 - Pending Payment/ 1 - Processing / 2 - Shipped / 3 - Delivered  ");
             string status = Console.ReadLine();
             OrderStatus order = (OrderStatus)Enum.Parse(typeof(OrderStatus), status);
-
-           
+ 
             Client cliente = new Client(name, email, birthdate);
             Order item = new Order(DateTime.Now, order, cliente);
 
-
             Console.Write("How many itens to this order?: ");
-            int n = int.Parse(Console.ReadLine());
-            for (int i = 1; i < n; i++)
+            int qta = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i <= qta; i++)
             {
                 Console.WriteLine($"Enter #{i} item data:");
                 Console.Write("Product Name: ");
@@ -44,7 +43,7 @@ namespace ExercicioMod9Pratica
 
                 Product pro = new Product(namepro, pricePro);
                 OrderItem List = new OrderItem(quantityPro, pricePro, pro);
-                                
+                         
                 item.AddItem(List);
                
             }
